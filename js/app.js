@@ -63,6 +63,7 @@ function route() {
   const tab = { exercise: 'today', swap: 'today' }[base] ?? base;
   document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + tab));
   view.onclick = null;
+  view.onchange = null;
   screen.mount(view, ctx, ...args.map(decodeURIComponent));
   updateBanner();
   window.scrollTo(0, 0);
